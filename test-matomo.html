@@ -5,13 +5,14 @@
   <script type="text/javascript">
       var _paq = (window._paq = window._paq || []);
       
+      _paq.push(["setDomains", ["*.cwg.tw", "*.github.io"]]);
+      _paq.push(["enableLinkTracking"]);
       _paq.push(['setCustomDimension', customDimensionId = 1, customDimensionValue = 'LDA']);
       _paq.push(['setUserId', 'test-user-account']);
-      _paq.push(["setDomains", ["*.cwg.tw", "*.github.io"]]);
       
       /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
       _paq.push(["trackPageView"]);
-      _paq.push(["enableLinkTracking"]);
+      
       (function () {
         var u = "//matomo.cwg.tw/";
         _paq.push(["setTrackerUrl", u + "matomo.php"]);
