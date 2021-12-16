@@ -2,16 +2,11 @@
   <head>
   <title> test matomo with cross domain linking </title>  
   <!-- Matomo -->
-  <script type="text/javascript">
+<script type="text/javascript">
       var _paq = (window._paq = window._paq || []);
       
-      _paq.push(["setDomains", ["*.cwg.tw", "*.github.io"]]);
+      _paq.push(["setDomains", ["*.cwg.tw", "*.commonhealth.com.tw "]]);
       _paq.push(["enableCrossDomainLinking"]);
-      
-      /* 
-      _paq.push(['setCustomDimension', customDimensionId = 1, customDimensionValue = 'LDA']);
-      _paq.push(['setUserId', 'test-user-account']);
-      */
       
       /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
       _paq.push(["trackPageView"]);
@@ -30,8 +25,8 @@
         g.src = u + "matomo.js";
         s.parentNode.insertBefore(g, s);
       })();
-  </script>
-  <!-- End Matomo Code -->
+</script>
+<!-- End Matomo Code -->
   </head>
   <body>
     <a href="https://lda.cwg.tw/"> test lda </a>
