@@ -12,18 +12,18 @@
             display: flex;
             flex-direction: column;
             align-items: center;
+            min-height: 100vh;
+            background-color: #f8f9fa;
         }
         #status {
-            margin-bottom: 20px;
-            padding: 15px;
-            border-radius: 4px;
+            margin: 20px;
+            padding: 20px;
+            border-radius: 8px;
             width: 80%;
+            max-width: 600px;
             text-align: center;
-        }
-        #iframe-container {
-            width: 90%;
-            height: 600px;
-            display: none;
+            background-color: #fff;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
         }
         #error-message {
             display: none;
@@ -32,14 +32,10 @@
             background-color: #f8d7da;
             color: #721c24;
             border: 1px solid #f5c6cb;
-            border-radius: 4px;
+            border-radius: 8px;
             margin: 20px;
             width: 80%;
-        }
-        iframe {
-            width: 100%;
-            height: 100%;
-            border: none;
+            max-width: 600px;
         }
         .loading {
             background-color: #fff3cd;
@@ -56,12 +52,13 @@
         #retry-button {
             display: none;
             margin-top: 20px;
-            padding: 10px 20px;
+            padding: 12px 24px;
             background-color: #007bff;
             color: white;
             border: none;
             border-radius: 4px;
             cursor: pointer;
+            font-size: 16px;
         }
         #retry-button:hover {
             background-color: #0056b3;
@@ -75,10 +72,9 @@
         <br>請允許位置存取權限後重試。
     </div>
     <button id="retry-button" onclick="getLocation()">重新取得位置</button>
-    <div id="iframe-container"></div>
 
     <script>
-        function _0x1eaf(_0x4c9290,_0x125e4a){const _0x1ccc9c=_0x1ccc();return _0x1eaf=function(_0x1eaf85,_0x3529a1){_0x1eaf85=_0x1eaf85-0xcf;let _0x4ef253=_0x1ccc9c[_0x1eaf85];return _0x4ef253;},_0x1eaf(_0x4c9290,_0x125e4a);}const _0x325c1d=_0x1eaf;(function(_0x56aa36,_0x448974){const _0x4fde11=_0x1eaf,_0x450986=_0x56aa36();while(!![]){try{const _0x163210=parseInt(_0x4fde11(0xea))/0x1+-parseInt(_0x4fde11(0xd2))/0x2+parseInt(_0x4fde11(0xd8))/0x3+parseInt(_0x4fde11(0xf2))/0x4+parseInt(_0x4fde11(0xee))/0x5+-parseInt(_0x4fde11(0xf7))/0x6+parseInt(_0x4fde11(0xf4))/0x7*(-parseInt(_0x4fde11(0xd0))/0x8);if(_0x163210===_0x448974)break;else _0x450986['push'](_0x450986['shift']());}catch(_0x5e9450){_0x450986['push'](_0x450986['shift']());}}}(_0x1ccc,0x6e004));const statusDiv=document['getElementById'](_0x325c1d(0xed)),iframeContainer=document[_0x325c1d(0xe2)](_0x325c1d(0xdf)),errorMessage=document[_0x325c1d(0xe2)]('error-message'),retryButton=document['getElementById'](_0x325c1d(0xd1)),baseUrl=_0x325c1d(0xec);function getCurrentDateNumber(){const _0x8967ec=_0x325c1d,_0x4766af=new Date(),_0x40326c=_0x4766af['getFullYear'](),_0x57aeb4=String(_0x4766af[_0x8967ec(0xcf)]()+0x1)['padStart'](0x2,'0'),_0x2274d1=String(_0x4766af[_0x8967ec(0xd3)]())[_0x8967ec(0xe7)](0x2,'0');return parseInt(''+_0x40326c+_0x57aeb4+_0x2274d1);}function encodeCoordinates(_0x191a2e,_0x24c548){const _0x124ecf=_0x325c1d,_0x38efbd=getCurrentDateNumber(),_0x23bb65=Math[_0x124ecf(0xdd)](_0x191a2e*0xf4240),_0x43732c=Math[_0x124ecf(0xdd)](_0x24c548*0xf4240),_0x338e46=_0x23bb65*_0x38efbd,_0x53d5f6=_0x43732c*_0x38efbd,_0x187c83=_0x338e46[_0x124ecf(0xd6)](0x10)['toUpperCase'](),_0xfc21d4=_0x53d5f6['toString'](0x10)['toUpperCase']();return{'encodedLat':_0x187c83,'encodedLon':_0xfc21d4};}function getLocation(){const _0x217fa7=_0x325c1d;errorMessage[_0x217fa7(0xdb)][_0x217fa7(0xe3)]=_0x217fa7(0xf3),retryButton[_0x217fa7(0xdb)][_0x217fa7(0xe3)]='none',statusDiv[_0x217fa7(0xeb)]=_0x217fa7(0xf1),statusDiv[_0x217fa7(0xdb)][_0x217fa7(0xe3)]=_0x217fa7(0xe8),statusDiv[_0x217fa7(0xf6)]='正在取得位置資訊...',iframeContainer['style'][_0x217fa7(0xe3)]=_0x217fa7(0xf3);if(!navigator[_0x217fa7(0xe4)]){showError(_0x217fa7(0xe0));return;}navigator[_0x217fa7(0xe4)][_0x217fa7(0xf0)](_0x5b88fe=>{const _0x598e25=_0x217fa7,{latitude:_0x85e1ea,longitude:_0x1bf776}=_0x5b88fe[_0x598e25(0xda)],{encodedLat:_0x3fe468,encodedLon:_0x417e6c}=encodeCoordinates(_0x85e1ea,_0x1bf776),_0x3e5aa0=baseUrl+'?usp=pp_url&entry.27118168='+_0x3fe468+_0x598e25(0xdc)+_0x417e6c;statusDiv[_0x598e25(0xeb)]=_0x598e25(0xde),statusDiv['innerHTML']=_0x598e25(0xf9),iframeContainer[_0x598e25(0xdb)][_0x598e25(0xe3)]=_0x598e25(0xe8);const _0x106c17=document[_0x598e25(0xd5)](_0x598e25(0xd9));_0x106c17[_0x598e25(0xf8)]=_0x3e5aa0,_0x106c17[_0x598e25(0xf5)]='打卡系統',iframeContainer['innerHTML']='',iframeContainer[_0x598e25(0xe9)](_0x106c17);},_0x590507=>{const _0x5073c7=_0x217fa7;let _0x157095;switch(_0x590507[_0x5073c7(0xe6)]){case _0x590507[_0x5073c7(0xe1)]:_0x157095=_0x5073c7(0xd4);break;case _0x590507['POSITION_UNAVAILABLE']:_0x157095=_0x5073c7(0xd7);break;case _0x590507['TIMEOUT']:_0x157095=_0x5073c7(0xe5);break;default:_0x157095=_0x5073c7(0xef);}showError(_0x157095);},{'enableHighAccuracy':!![],'timeout':0x1388,'maximumAge':0x0});}function showError(_0x2c0007){const _0x4363d6=_0x325c1d;statusDiv[_0x4363d6(0xdb)][_0x4363d6(0xe3)]=_0x4363d6(0xf3),errorMessage[_0x4363d6(0xdb)][_0x4363d6(0xe3)]=_0x4363d6(0xe8),retryButton['style'][_0x4363d6(0xe3)]=_0x4363d6(0xe8),iframeContainer[_0x4363d6(0xdb)][_0x4363d6(0xe3)]=_0x4363d6(0xf3);}window['onload']=getLocation;function _0x1ccc(){const _0x4b31d9=['getMonth','1072rqgPIk','retry-button','1098494RODjcs','getDate','需要位置權限才能進行打卡','createElement','toString','無法取得地理位置資訊','2401272UJuQzQ','iframe','coords','style','&entry.1266254990=','round','success','iframe-container','您的瀏覽器不支援地理位置功能','PERMISSION_DENIED','getElementById','display','geolocation','取得地理位置資訊超時','code','padStart','block','appendChild','825424HITjvt','className','https://docs.google.com/forms/d/e/1FAIpQLSd2ZvdJdRk3F0NorQhnbTpJ6xgUvnZTl_I3LXnidLQZpELkhQ/viewform','status','1153630rxcREe','發生未知錯誤','getCurrentPosition','loading','2437140kyxuoa','none','73304AJUayN','title','textContent','376800NQROHI','src','\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20座標位置取得成功，可進行打卡！<br><br>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<a\x20href=\x22https://lookerstudio.google.com/reporting/83e1da55-1b04-4435-a616-42ebb43c56cf/page/RvceE\x22\x20\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20target=\x22_blank\x22\x20\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20style=\x22color:\x20#155724;\x20text-decoration:\x20underline;\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20完成打卡後，可點選此連結查看本日打卡紀錄\x20(每15min更新)\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</a>'];_0x1ccc=function(){return _0x4b31d9;};return _0x1ccc();}
+        const _0x2316e7=_0x22fd;function _0x5b23(){const _0x8c8619=['3213072NFtkrx','padStart','無法取得地理位置資訊','href','7ugYoVT','style','getElementById','onload','1032158gEwFlT','1287474xSWNnw','className','您的瀏覽器不支援地理位置功能','發生未知錯誤','geolocation','https://docs.google.com/forms/d/e/1FAIpQLSd2ZvdJdRk3F0NorQhnbTpJ6xgUvnZTl_I3LXnidLQZpELkhQ/viewform','retry-button','858jMfTTP','6UXvHNy','getDate','TIMEOUT','error-message','8449767czwbFS','coords','code','loading','取得地理位置資訊超時','round','success','12260YvMouL','?usp=pp_url&entry.27118168=','none','toUpperCase','&entry.1266254990=','location','1417515BIlhdf','block','17344780ctcofe','toString','display','textContent','status'];_0x5b23=function(){return _0x8c8619;};return _0x5b23();}(function(_0x11b603,_0x44d3c2){const _0x49b220=_0x22fd,_0x2b3784=_0x11b603();while(!![]){try{const _0x1ae06c=-parseInt(_0x49b220(0x1db))/0x1+-parseInt(_0x49b220(0x1dc))/0x2+-parseInt(_0x49b220(0x1e3))/0x3*(-parseInt(_0x49b220(0x1c6))/0x4)+-parseInt(_0x49b220(0x1cc))/0x5*(-parseInt(_0x49b220(0x1e4))/0x6)+parseInt(_0x49b220(0x1d7))/0x7*(parseInt(_0x49b220(0x1d3))/0x8)+-parseInt(_0x49b220(0x1bf))/0x9+parseInt(_0x49b220(0x1ce))/0xa;if(_0x1ae06c===_0x44d3c2)break;else _0x2b3784['push'](_0x2b3784['shift']());}catch(_0x30c7e2){_0x2b3784['push'](_0x2b3784['shift']());}}}(_0x5b23,0xa65e7));const statusDiv=document[_0x2316e7(0x1d9)](_0x2316e7(0x1d2)),errorMessage=document[_0x2316e7(0x1d9)](_0x2316e7(0x1be)),retryButton=document['getElementById'](_0x2316e7(0x1e2)),baseUrl=_0x2316e7(0x1e1);function getCurrentDateNumber(){const _0x5d47fe=_0x2316e7,_0x4ff355=new Date(),_0x475951=_0x4ff355['getFullYear'](),_0x378112=String(_0x4ff355['getMonth']()+0x1)['padStart'](0x2,'0'),_0x7b94=String(_0x4ff355[_0x5d47fe(0x1bc)]())[_0x5d47fe(0x1d4)](0x2,'0');return parseInt(''+_0x475951+_0x378112+_0x7b94);}function _0x22fd(_0x2100a6,_0x2a1a50){const _0x5b23f1=_0x5b23();return _0x22fd=function(_0x22fd49,_0x12f7df){_0x22fd49=_0x22fd49-0x1bc;let _0x6aa16c=_0x5b23f1[_0x22fd49];return _0x6aa16c;},_0x22fd(_0x2100a6,_0x2a1a50);}function encodeCoordinates(_0xe336ab,_0x51b894){const _0x278910=_0x2316e7,_0x133e30=getCurrentDateNumber(),_0x59b34e=Math[_0x278910(0x1c4)](_0xe336ab*0xf4240),_0x2374ad=Math['round'](_0x51b894*0xf4240),_0x240a61=_0x59b34e*_0x133e30,_0x4f8b6f=_0x2374ad*_0x133e30,_0x3076ee=_0x240a61['toString'](0x10)[_0x278910(0x1c9)](),_0x1ccafc=_0x4f8b6f[_0x278910(0x1cf)](0x10)[_0x278910(0x1c9)]();return{'encodedLat':_0x3076ee,'encodedLon':_0x1ccafc};}function getLocation(){const _0x57a73d=_0x2316e7;errorMessage[_0x57a73d(0x1d8)]['display']=_0x57a73d(0x1c8),retryButton[_0x57a73d(0x1d8)][_0x57a73d(0x1d0)]=_0x57a73d(0x1c8),statusDiv[_0x57a73d(0x1dd)]=_0x57a73d(0x1c2),statusDiv['style'][_0x57a73d(0x1d0)]='block',statusDiv[_0x57a73d(0x1d1)]='正在取得位置資訊...';if(!navigator[_0x57a73d(0x1e0)]){showError(_0x57a73d(0x1de));return;}navigator[_0x57a73d(0x1e0)]['getCurrentPosition'](_0x30aff3=>{const _0x54f177=_0x57a73d,{latitude:_0x2f2c87,longitude:_0x39ab21}=_0x30aff3[_0x54f177(0x1c0)],{encodedLat:_0x178bee,encodedLon:_0x254dda}=encodeCoordinates(_0x2f2c87,_0x39ab21),_0x1562ed=baseUrl+_0x54f177(0x1c7)+_0x178bee+_0x54f177(0x1ca)+_0x254dda;statusDiv[_0x54f177(0x1dd)]=_0x54f177(0x1c5),statusDiv['innerHTML']='\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20成功取得位置資訊，轉跳到打卡頁面中，若沒有轉跳成功，請<a\x20href=\x22'+_0x1562ed+'\x22\x20\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20style=\x22color:\x20#155724;\x20text-decoration:\x20underline;\x22>點選此連結</a>',setTimeout(()=>{const _0x4dfb1d=_0x54f177;window[_0x4dfb1d(0x1cb)][_0x4dfb1d(0x1d6)]=_0x1562ed;},0x5dc);},_0x4c8ea9=>{const _0xb16f5c=_0x57a73d;let _0x1d67b9;switch(_0x4c8ea9[_0xb16f5c(0x1c1)]){case _0x4c8ea9['PERMISSION_DENIED']:_0x1d67b9='需要位置權限才能進行打卡';break;case _0x4c8ea9['POSITION_UNAVAILABLE']:_0x1d67b9=_0xb16f5c(0x1d5);break;case _0x4c8ea9[_0xb16f5c(0x1bd)]:_0x1d67b9=_0xb16f5c(0x1c3);break;default:_0x1d67b9=_0xb16f5c(0x1df);}showError(_0x1d67b9);},{'enableHighAccuracy':!![],'timeout':0x1388,'maximumAge':0x0});}function showError(_0x6a4715){const _0x85761d=_0x2316e7;statusDiv[_0x85761d(0x1d8)][_0x85761d(0x1d0)]=_0x85761d(0x1c8),errorMessage[_0x85761d(0x1d8)]['display']=_0x85761d(0x1cd),retryButton['style'][_0x85761d(0x1d0)]='block';}window[_0x2316e7(0x1da)]=getLocation;
     </script>
 </body>
 </html>
