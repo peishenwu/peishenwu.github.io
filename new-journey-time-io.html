@@ -49,19 +49,48 @@
             background-color: #f8d7da;
             color: #721c24;
         }
-        #retry-button {
-            display: none;
-            margin-top: 20px;
+        .button {
+            margin-top: 15px;
             padding: 12px 24px;
-            background-color: #007bff;
-            color: white;
             border: none;
             border-radius: 4px;
             cursor: pointer;
             font-size: 16px;
+            transition: background-color 0.2s;
         }
-        #retry-button:hover {
+        .primary-button {
+            background-color: #007bff;
+            color: white;
+        }
+        .primary-button:hover {
             background-color: #0056b3;
+        }
+        .secondary-button {
+            background-color: #6c757d;
+            color: white;
+            margin-left: 10px;
+        }
+        .secondary-button:hover {
+            background-color: #545b62;
+        }
+        .button-group {
+            margin-top: 20px;
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+        }
+        .code-display {
+            background-color: #f8f9fa;
+            padding: 10px;
+            border-radius: 4px;
+            margin: 10px 0;
+            word-break: break-all;
+            font-family: monospace;
+        }
+        .note {
+            margin-top: 15px;
+            color: #666;
+            font-size: 0.9em;
         }
     </style>
 </head>
@@ -71,10 +100,10 @@
         打卡系統需要取得您的GPS位置才能進行打卡。
         <br>請允許位置存取權限後重試。
     </div>
-    <button id="retry-button" onclick="getLocation()">重新取得位置</button>
+    <button id="retry-button" onclick="getLocation()" class="button primary-button" style="display: none;">重新取得位置</button>
 
     <script>
-        const _0x2316e7=_0x22fd;function _0x5b23(){const _0x8c8619=['3213072NFtkrx','padStart','無法取得地理位置資訊','href','7ugYoVT','style','getElementById','onload','1032158gEwFlT','1287474xSWNnw','className','您的瀏覽器不支援地理位置功能','發生未知錯誤','geolocation','https://docs.google.com/forms/d/e/1FAIpQLSd2ZvdJdRk3F0NorQhnbTpJ6xgUvnZTl_I3LXnidLQZpELkhQ/viewform','retry-button','858jMfTTP','6UXvHNy','getDate','TIMEOUT','error-message','8449767czwbFS','coords','code','loading','取得地理位置資訊超時','round','success','12260YvMouL','?usp=pp_url&entry.27118168=','none','toUpperCase','&entry.1266254990=','location','1417515BIlhdf','block','17344780ctcofe','toString','display','textContent','status'];_0x5b23=function(){return _0x8c8619;};return _0x5b23();}(function(_0x11b603,_0x44d3c2){const _0x49b220=_0x22fd,_0x2b3784=_0x11b603();while(!![]){try{const _0x1ae06c=-parseInt(_0x49b220(0x1db))/0x1+-parseInt(_0x49b220(0x1dc))/0x2+-parseInt(_0x49b220(0x1e3))/0x3*(-parseInt(_0x49b220(0x1c6))/0x4)+-parseInt(_0x49b220(0x1cc))/0x5*(-parseInt(_0x49b220(0x1e4))/0x6)+parseInt(_0x49b220(0x1d7))/0x7*(parseInt(_0x49b220(0x1d3))/0x8)+-parseInt(_0x49b220(0x1bf))/0x9+parseInt(_0x49b220(0x1ce))/0xa;if(_0x1ae06c===_0x44d3c2)break;else _0x2b3784['push'](_0x2b3784['shift']());}catch(_0x30c7e2){_0x2b3784['push'](_0x2b3784['shift']());}}}(_0x5b23,0xa65e7));const statusDiv=document[_0x2316e7(0x1d9)](_0x2316e7(0x1d2)),errorMessage=document[_0x2316e7(0x1d9)](_0x2316e7(0x1be)),retryButton=document['getElementById'](_0x2316e7(0x1e2)),baseUrl=_0x2316e7(0x1e1);function getCurrentDateNumber(){const _0x5d47fe=_0x2316e7,_0x4ff355=new Date(),_0x475951=_0x4ff355['getFullYear'](),_0x378112=String(_0x4ff355['getMonth']()+0x1)['padStart'](0x2,'0'),_0x7b94=String(_0x4ff355[_0x5d47fe(0x1bc)]())[_0x5d47fe(0x1d4)](0x2,'0');return parseInt(''+_0x475951+_0x378112+_0x7b94);}function _0x22fd(_0x2100a6,_0x2a1a50){const _0x5b23f1=_0x5b23();return _0x22fd=function(_0x22fd49,_0x12f7df){_0x22fd49=_0x22fd49-0x1bc;let _0x6aa16c=_0x5b23f1[_0x22fd49];return _0x6aa16c;},_0x22fd(_0x2100a6,_0x2a1a50);}function encodeCoordinates(_0xe336ab,_0x51b894){const _0x278910=_0x2316e7,_0x133e30=getCurrentDateNumber(),_0x59b34e=Math[_0x278910(0x1c4)](_0xe336ab*0xf4240),_0x2374ad=Math['round'](_0x51b894*0xf4240),_0x240a61=_0x59b34e*_0x133e30,_0x4f8b6f=_0x2374ad*_0x133e30,_0x3076ee=_0x240a61['toString'](0x10)[_0x278910(0x1c9)](),_0x1ccafc=_0x4f8b6f[_0x278910(0x1cf)](0x10)[_0x278910(0x1c9)]();return{'encodedLat':_0x3076ee,'encodedLon':_0x1ccafc};}function getLocation(){const _0x57a73d=_0x2316e7;errorMessage[_0x57a73d(0x1d8)]['display']=_0x57a73d(0x1c8),retryButton[_0x57a73d(0x1d8)][_0x57a73d(0x1d0)]=_0x57a73d(0x1c8),statusDiv[_0x57a73d(0x1dd)]=_0x57a73d(0x1c2),statusDiv['style'][_0x57a73d(0x1d0)]='block',statusDiv[_0x57a73d(0x1d1)]='正在取得位置資訊...';if(!navigator[_0x57a73d(0x1e0)]){showError(_0x57a73d(0x1de));return;}navigator[_0x57a73d(0x1e0)]['getCurrentPosition'](_0x30aff3=>{const _0x54f177=_0x57a73d,{latitude:_0x2f2c87,longitude:_0x39ab21}=_0x30aff3[_0x54f177(0x1c0)],{encodedLat:_0x178bee,encodedLon:_0x254dda}=encodeCoordinates(_0x2f2c87,_0x39ab21),_0x1562ed=baseUrl+_0x54f177(0x1c7)+_0x178bee+_0x54f177(0x1ca)+_0x254dda;statusDiv[_0x54f177(0x1dd)]=_0x54f177(0x1c5),statusDiv['innerHTML']='\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20成功取得位置資訊，轉跳到打卡頁面中，若沒有轉跳成功，請<a\x20href=\x22'+_0x1562ed+'\x22\x20\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20style=\x22color:\x20#155724;\x20text-decoration:\x20underline;\x22>點選此連結</a>',setTimeout(()=>{const _0x4dfb1d=_0x54f177;window[_0x4dfb1d(0x1cb)][_0x4dfb1d(0x1d6)]=_0x1562ed;},0x5dc);},_0x4c8ea9=>{const _0xb16f5c=_0x57a73d;let _0x1d67b9;switch(_0x4c8ea9[_0xb16f5c(0x1c1)]){case _0x4c8ea9['PERMISSION_DENIED']:_0x1d67b9='需要位置權限才能進行打卡';break;case _0x4c8ea9['POSITION_UNAVAILABLE']:_0x1d67b9=_0xb16f5c(0x1d5);break;case _0x4c8ea9[_0xb16f5c(0x1bd)]:_0x1d67b9=_0xb16f5c(0x1c3);break;default:_0x1d67b9=_0xb16f5c(0x1df);}showError(_0x1d67b9);},{'enableHighAccuracy':!![],'timeout':0x1388,'maximumAge':0x0});}function showError(_0x6a4715){const _0x85761d=_0x2316e7;statusDiv[_0x85761d(0x1d8)][_0x85761d(0x1d0)]=_0x85761d(0x1c8),errorMessage[_0x85761d(0x1d8)]['display']=_0x85761d(0x1cd),retryButton['style'][_0x85761d(0x1d0)]='block';}window[_0x2316e7(0x1da)]=getLocation;
+const _0x543608=_0x4262;(function(_0x3a1d2e,_0x255ded){const _0x5268d4=_0x4262,_0xdf1b15=_0x3a1d2e();while(!![]){try{const _0x127cf6=parseInt(_0x5268d4(0x1d3))/0x1*(-parseInt(_0x5268d4(0x1aa))/0x2)+parseInt(_0x5268d4(0x1c0))/0x3*(-parseInt(_0x5268d4(0x1cf))/0x4)+parseInt(_0x5268d4(0x1ac))/0x5+-parseInt(_0x5268d4(0x1a9))/0x6+-parseInt(_0x5268d4(0x1a5))/0x7*(parseInt(_0x5268d4(0x1c4))/0x8)+parseInt(_0x5268d4(0x1c9))/0x9*(parseInt(_0x5268d4(0x1d0))/0xa)+parseInt(_0x5268d4(0x1b7))/0xb*(parseInt(_0x5268d4(0x1ba))/0xc);if(_0x127cf6===_0x255ded)break;else _0xdf1b15['push'](_0xdf1b15['shift']());}catch(_0x320c17){_0xdf1b15['push'](_0xdf1b15['shift']());}}}(_0x20ca,0xca572));const statusDiv=document['getElementById'](_0x543608(0x1b9)),errorMessage=document[_0x543608(0x1a1)](_0x543608(0x1d4)),retryButton=document[_0x543608(0x1a1)]('retry-button'),baseUrl=_0x543608(0x1a3);function getCurrentDateNumber(){const _0x5ef85e=_0x543608,_0x465517=new Date(),_0x541a84=_0x465517[_0x5ef85e(0x1ca)](),_0xed28ee=String(_0x465517[_0x5ef85e(0x1ad)]()+0x1)[_0x5ef85e(0x1b3)](0x2,'0'),_0x10e3f2=String(_0x465517[_0x5ef85e(0x1cd)]())[_0x5ef85e(0x1b3)](0x2,'0');return parseInt(''+_0x541a84+_0xed28ee+_0x10e3f2);}function encodeCoordinates(_0x223f5d,_0x583c9f){const _0x19c449=_0x543608,_0x29cef7=getCurrentDateNumber(),_0x2e6410=Math['round'](_0x223f5d*0xf4240),_0x33a244=Math[_0x19c449(0x1ce)](_0x583c9f*0xf4240),_0x322894=_0x2e6410*_0x29cef7,_0x2cb512=_0x33a244*_0x29cef7,_0x5d5d88=_0x322894[_0x19c449(0x1ae)](0x10)['toUpperCase'](),_0x3b8dea=_0x2cb512['toString'](0x10)[_0x19c449(0x1b6)]();return _0x5d5d88+'_'+_0x3b8dea;}function _0x20ca(){const _0x68a688=['copyButton','code','success','\x27,\x20\x27','570219BJoUYM','\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div>成功取得位置資訊！</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22note\x22>注意：進入打卡頁面需要登入\x20Gmail\x20帳號</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22button-group\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<button\x20onclick=\x22goToForm(\x27','block','?usp=pp_url&entry.27118168=','8pMybRu','coords','innerHTML','href','TIMEOUT','40491NaVCoV','getFullYear','display','textContent','getDate','round','28tYJqGd','2230lPnCnq','發生未知錯誤','geolocation','1723UKwIKK','error-message','getElementById','\x27)\x22\x20class=\x22button\x20primary-button\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20前往打卡頁面\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</button>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22note\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20如果座標驗證碼沒有自動帶入，請複製以下驗證碼：\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22code-display\x22>','https://docs.google.com/forms/d/e/1FAIpQLSd2ZvdJdRk3F0NorQhnbTpJ6xgUvnZTl_I3LXnidLQZpELkhQ/viewform','then','10757341ueFPAl','error','loading','需要位置權限才能進行打卡','6705360MeLXOp','1642CXGIwa','none','2860865bwoYiH','getMonth','toString','正在取得位置資訊...','className','\x27)\x22\x20class=\x22button\x20secondary-button\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20複製座標驗證碼\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</button>','getCurrentPosition','padStart','style','您的瀏覽器不支援地理位置功能','toUpperCase','51180283OijQQP','已複製！','status','12EswQZS','無法取得地理位置資訊'];_0x20ca=function(){return _0x68a688;};return _0x20ca();}function copyToClipboard(_0x43ce2a){const _0x17e519=_0x543608;navigator['clipboard']['writeText'](_0x43ce2a)[_0x17e519(0x1a4)](()=>{const _0x3fea5d=_0x17e519,_0x3da285=document[_0x3fea5d(0x1a1)](_0x3fea5d(0x1bc));_0x3da285[_0x3fea5d(0x1cc)]=_0x3fea5d(0x1b8),setTimeout(()=>{const _0x166740=_0x3fea5d;_0x3da285[_0x166740(0x1cc)]='複製座標驗證碼';},0x7d0);},_0x4470b6=>{const _0x51b714=_0x17e519;console[_0x51b714(0x1a6)]('無法複製文字:\x20',_0x4470b6);});}function goToForm(_0x354f7c,_0x4fa795){const _0x5c268d=_0x543608;window['location'][_0x5c268d(0x1c7)]=_0x354f7c;}function getLocation(){const _0x301d72=_0x543608;errorMessage['style'][_0x301d72(0x1cb)]=_0x301d72(0x1ab),retryButton[_0x301d72(0x1b4)][_0x301d72(0x1cb)]=_0x301d72(0x1ab),statusDiv[_0x301d72(0x1b0)]=_0x301d72(0x1a7),statusDiv[_0x301d72(0x1b4)][_0x301d72(0x1cb)]='block',statusDiv[_0x301d72(0x1cc)]=_0x301d72(0x1af);if(!navigator[_0x301d72(0x1d2)]){showError(_0x301d72(0x1b5));return;}navigator[_0x301d72(0x1d2)][_0x301d72(0x1b2)](_0x54c484=>{const _0x4acc70=_0x301d72,{latitude:_0x11b568,longitude:_0x2b0d02}=_0x54c484[_0x4acc70(0x1c5)],_0x43886f=encodeCoordinates(_0x11b568,_0x2b0d02),_0x5d1be3=baseUrl+_0x4acc70(0x1c3)+_0x43886f;statusDiv[_0x4acc70(0x1b0)]=_0x4acc70(0x1be),statusDiv[_0x4acc70(0x1c6)]=_0x4acc70(0x1c1)+_0x5d1be3+_0x4acc70(0x1bf)+_0x43886f+_0x4acc70(0x1a2)+_0x43886f+'</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<button\x20id=\x22copyButton\x22\x20onclick=\x22copyToClipboard(\x27'+_0x43886f+_0x4acc70(0x1b1);},_0x500705=>{const _0x1c0d6c=_0x301d72;let _0x2918b2;switch(_0x500705[_0x1c0d6c(0x1bd)]){case _0x500705['PERMISSION_DENIED']:_0x2918b2=_0x1c0d6c(0x1a8);break;case _0x500705['POSITION_UNAVAILABLE']:_0x2918b2=_0x1c0d6c(0x1bb);break;case _0x500705[_0x1c0d6c(0x1c8)]:_0x2918b2='取得地理位置資訊超時';break;default:_0x2918b2=_0x1c0d6c(0x1d1);}showError(_0x2918b2);},{'enableHighAccuracy':!![],'timeout':0x1388,'maximumAge':0x0});}function _0x4262(_0x30a679,_0x50c880){const _0x20cafd=_0x20ca();return _0x4262=function(_0x4262bd,_0x1f4dcf){_0x4262bd=_0x4262bd-0x1a1;let _0xdc87f0=_0x20cafd[_0x4262bd];return _0xdc87f0;},_0x4262(_0x30a679,_0x50c880);}function showError(_0x33e60b){const _0x2d3983=_0x543608;statusDiv['style'][_0x2d3983(0x1cb)]=_0x2d3983(0x1ab),errorMessage['style'][_0x2d3983(0x1cb)]=_0x2d3983(0x1c2),retryButton[_0x2d3983(0x1b4)][_0x2d3983(0x1cb)]=_0x2d3983(0x1c2);}window['onload']=getLocation;
     </script>
 </body>
 </html>
